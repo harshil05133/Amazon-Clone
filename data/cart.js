@@ -12,7 +12,7 @@ export function addToCart(productId){
 
   cart.forEach((cartItem) => {
     if(productId === cartItem.productId){
-      matchingItem = cartIitem;
+      matchingItem = cartItem;
     }
   });
 
@@ -25,4 +25,15 @@ export function addToCart(productId){
       quantity: 1
     });
   }
+}
+
+export function removeFromCart(productId){
+  let matchingItem;
+
+  cart.forEach((cartItem, i) => {
+    if(productId === cartItem.productId){
+      matchingItem = cartItem;
+      cart.splice(i, 1);
+    }
+  });
 }
